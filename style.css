@@ -31,8 +31,10 @@
   /* Fonts */
   :root {
     --fs-12: calc(12 / 16 * 1rem);
+    --fs-16: calc(16 / 16 * 1rem);
 
     --font-size-banner: var(--fs-12);
+    --font-size-button: var(--fs-16);
   }
 
   /* Colors */
@@ -42,11 +44,15 @@
     --c-netural-white-1000: hsl(220, 6%, 91%);
     --c-light-grey: hsl(218, 13%, 24%);
     --c-ebony: hsl(216, 12%, 8%);
+    --c-soft-peach: hsl(180, 3%, 94%);
+    --c-shuttle-grey: hsl(218, 13%, 41%);
 
     --color-banner-tag-bg: var(--c-neutral-white-1300);
     --color-banner-border: var(--c-netural-white-1000);
     --color-banner-tag-text: var(--c-light-grey);
     --color-banner-description: var(var(--c-ebony));
+    --color-button-bg: var(--c-soft-peach);
+    --color-button-text: var(--c-shuttle-grey);
   }
 
   *,
@@ -71,6 +77,21 @@
     align-items: center;
   }
 
+  img,
+  picture,
+  svg {
+    max-width: 100%;
+    display: block;
+    height: auto;
+  }
+
+  button {
+    font: inherit;
+    border: none;
+    padding: 0;
+    background: none;
+  }
+
   .wrapper {
     width: min(calc(100% - 16px), calc(1200 / 16 * 1rem));
     margin-inline: auto;
@@ -82,6 +103,16 @@
 }
 
 @layer components {
+  .button {
+    background-color: var(--color-button-bg);
+    color: var(--color-button-text);
+    font-size: var(--font-size-button);
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+  }
+
   .banner {
     font-size: var(--font-size-banner);
     border-bottom: 1px solid var(--color-banner-border);
@@ -91,7 +122,7 @@
       gap: 16px;
       justify-content: center;
       align-items: center;
-      padding: 8px;
+      padding-block: 8px;
     }
 
     .banner__tag {
@@ -107,6 +138,44 @@
 
     .banner__description {
       color: var(--color-banner-description);
+    }
+  }
+
+  .topnav {
+    .topnav__wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8px;
+    }
+
+    .topnav__homelink {
+      padding: 8px;
+    }
+
+    .topnav__logo {
+    }
+
+    .topnav__right {
+      display: flex;
+      gap: 16px;
+    }
+
+    .topnav__login-button {
+      display: inline-flex;
+      gap: 8px;
+    }
+
+    .topnav__login-logo {
+    }
+
+    button {
+      padding: 8px;
+
+      > img {
+        width: 24px;
+        height: 24px;
+      }
     }
   }
 }
