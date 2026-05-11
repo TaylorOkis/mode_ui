@@ -539,6 +539,12 @@
     .testimonial__author-position {
       font-size: var(--font-size-testimonial-author-position);
       color: var(--color-testimonial-author-position);
+      margin-block-end: 16px;
+    }
+
+    .testimonial__author-rating {
+      display: flex;
+      gap: 12px;
     }
   }
 }
