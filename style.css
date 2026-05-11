@@ -37,6 +37,15 @@
     src: url("./assets/Fonts/inter-v20-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
 
+  /* manrope-600 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: 600;
+    src: url("./assets/Fonts/manrope-v20-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
   /* Fonts */
   :root {
     --fs-12: calc(12 / 16 * 1rem);
@@ -56,6 +65,9 @@
     --font-size-hero-info: var(--fs-14);
     --font-size-features-description: var(--fs-18);
     --font-size-features-item-description: var(--fs-14);
+    --font-size-stats-number: var(--fs-40);
+    --font-size-stats-category: var(--fs-16);
+    --font-size-stats-description: var(--fs-16);
 
     @media (width >= calc(768 / 16 * 1rem)) {
       --font-size-h1: var(--fs-62);
@@ -90,6 +102,8 @@
     --color-features-link-all: var(--c-purple-iris);
     --color-features-item-title: var(--c-ebony);
     --color-features-item-description: var(--c-shuttle-grey);
+    --color-stats-number: var(--c-purple-iris);
+    --color-stats-description: var(--c-shuttle-grey);
   }
 
   *,
@@ -390,6 +404,8 @@
   }
 
   .features-2 {
+    margin-block-end: 64px;
+
     .features-2__items {
       display: flex;
       flex-direction: column;
@@ -407,6 +423,56 @@
         37rem
       );
       height: auto;
+    }
+  }
+
+  .stats {
+    text-align: center;
+
+    .stats__wrapper {
+      padding: 64px 16px;
+    }
+
+    .stats__items {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+
+      @media (width >= calc(1024 / 16 * 1rem)) {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+
+    .stats__item {
+      padding: 16px;
+    }
+
+    .stats__numbers {
+      color: var(--color-stats-number);
+      font-family: "Manrope";
+      font-weight: 600;
+      font-size: var(--font-size-stats-number);
+      margin-block-end: 16px;
+    }
+
+    .stats__category {
+      margin-block-end: 8px;
+      font-weight: 500;
+      font-size: var(--font-size-stats-category);
+    }
+
+    .stats__description {
+      font-weight: 400;
+      font-size: var(--font-size-stats-description);
+      color: var(--color-stats-description);
+      width: 21ch;
+      line-height: 1.5;
+
+      @media (width >= calc(768 / 16 * 1rem)) {
+        width: 25ch;
+      }
     }
   }
 }
