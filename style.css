@@ -64,6 +64,7 @@
     --fs-20: calc(20 / 16 * 1rem);
     --fs-32: calc(32 / 16 * 1rem);
     --fs-40: calc(40 / 16 * 1rem);
+    --fs-48: calc(48 / 16 * 1rem);
     --fs-62: calc(62 / 16 * 1rem);
 
     --font-size-h1: var(--fs-40);
@@ -81,11 +82,14 @@
     --font-size-testimonial-quote: var(--fs-20);
     --font-size-testimonial-author-name: var(--fs-16);
     --font-size-testimonial-author-position: var(--fs-14);
+    --font-size-cta-text: var(--fs-32);
 
     @media (width >= calc(768 / 16 * 1rem)) {
       --font-size-h1: var(--fs-62);
       --font-size-h2: var(--fs-40);
+      --font-size-stats-number: var(--fs-48);
       --font-size-testimonial-quote: var(--fs-32);
+      --font-size-cta-text: var(--fs-40);
     }
   }
 
@@ -121,6 +125,8 @@
     --color-stats-description: var(--c-shuttle-grey);
     --color-testimonial-quote: var(--c-neutral-100);
     --color-testimonial-author-position: var(--c-shuttle-grey);
+    --color-cta-text: var(--c-ebony);
+    --color-cta-button-first: var(--c-purple-iris);
   }
 
   *,
@@ -153,6 +159,11 @@
 
   h2 {
     font-size: var(--font-size-h2);
+    font-weight: 600;
+  }
+
+  h3 {
+    font-family: "Manrope";
     font-weight: 600;
   }
 
@@ -238,9 +249,6 @@
       padding: 8px;
     }
 
-    .topnav__logo {
-    }
-
     .topnav__right {
       display: flex;
       gap: 16px;
@@ -249,9 +257,6 @@
     .topnav__login-button {
       display: inline-flex;
       gap: 8px;
-    }
-
-    .topnav__login-logo {
     }
 
     button {
@@ -448,7 +453,11 @@
 
     .stats__wrapper {
       padding: 64px 16px;
-      margin-block-end: 96px;
+      margin-block-end: 64px;
+
+      @media (width >= calc(768 / 16 * 1rem)) {
+        margin-block-end: 96px;
+      }
     }
 
     .stats__items {
@@ -468,10 +477,8 @@
     }
 
     .stats__numbers {
-      color: var(--color-stats-number);
-      font-family: "Manrope";
-      font-weight: 600;
       font-size: var(--font-size-stats-number);
+      color: var(--color-stats-number);
       margin-block-end: 16px;
     }
 
@@ -501,6 +508,12 @@
     .testimonial__wrapper {
       display: grid;
       justify-items: center;
+      padding-block: 64px;
+      margin-block-end: 64px;
+
+      @media (width >= calc(768 / 16 * 1rem)) {
+        margin-block-end: 96px;
+      }
     }
 
     .testimonial__company-logo {
@@ -545,6 +558,53 @@
     .testimonial__author-rating {
       display: flex;
       gap: 12px;
+    }
+  }
+
+  .cta {
+    text-align: center;
+
+    .cta__wrapper {
+      display: grid;
+      justify-items: center;
+      gap: 32px;
+    }
+
+    .cta__text {
+      font-size: var(--font-size-cta-text);
+      color: var(--color-cta-text);
+      max-width: 25ch;
+    }
+
+    .cta__buttons {
+      display: flex;
+      gap: 8px;
+      width: 100%;
+
+      @media (width < calc(600 / 16 * 1rem)) {
+        flex-direction: column;
+      }
+
+      @media (width >= calc(600 / 16 * 1rem)) {
+        justify-content: center;
+      }
+    }
+
+    .cta__button {
+      display: flex;
+      gap: 8px;
+      height: 44px;
+      justify-content: center;
+      align-items: center;
+
+      @media (width >= calc(768 / 16 * 1rem)) {
+        width: calc(200 / 16 * 1rem);
+      }
+    }
+
+    .cta__button:first-child {
+      color: var(--c-white);
+      background-color: var(--color-cta-button-first);
     }
   }
 }
