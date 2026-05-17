@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mode UI</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="./script.js" defer></script>
   </head>
   <body>
     <div class="banner">
@@ -28,31 +29,38 @@
           />
         </a>
 
-        <div class="topnav__right">
-          <a class="topnav__login-button button" href=""
-            >Login
-            <img
-              class="topnav__login-logo"
-              src="/assets/Images/icons/login.svg"
-              alt=""
-              width="17"
-              height="17"
-          /></a>
+        <nav>
+          <div class="topnav__overlay"></div>
+          <div class="topnav__right">
+            <a class="topnav__login-button button" href=""
+              >Login
+              <img
+                class="topnav__login-logo"
+                src="/assets/Images/icons/login.svg"
+                alt=""
+                width="17"
+                height="17"
+            /></a>
 
-          <button>
-            <img
-              src="/assets/Images/icons/hamburger.svg"
-              alt=""
-              width="20"
-              height="14"
-              class="topnav__navigator"
-            />
-          </button>
-        </div>
+            <div class="topnav__ham-menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+
+          <div class="off-screen-menu">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Contact us</a></li>
+            </ul>
+          </div>
+        </nav>
       </div>
     </header>
 
-    <main>
+    <main id="main">
       <section class="hero">
         <div class="wrapper hero__wrapper">
           <h1 class="hero__title">
