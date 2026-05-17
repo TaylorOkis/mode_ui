@@ -70,6 +70,7 @@
     --font-size-h1: var(--fs-40);
     --font-size-h2: var(--fs-32);
     --font-size-banner: var(--fs-12);
+    --font-size-topnav-links: var(--fs-16);
     --font-size-button: var(--fs-16);
     --font-size-hero-subtitle: var(--fs-16);
     --font-size-hero-description: var(--fs-18);
@@ -111,6 +112,7 @@
     --color-banner-border: var(--c-netural-white-1000);
     --color-banner-tag-text: var(--c-light-grey);
     --color-banner-description: var(--c-ebony);
+    --color-topnav-links: var(--c-light-grey);
     --color-button-bg: var(--c-soft-peach);
     --color-button-text: var(--c-shuttle-grey);
     --color-hero-subtitle: var(--c-purple-iris);
@@ -224,44 +226,46 @@
   }
 
   .off-screen-menu {
-    background-color: white;
-    width: 50%;
-    max-width: 450px;
-    position: absolute;
-    top: 80%;
-    right: -450px;
-    display: grid;
-    gap: 16px;
-    font-size: 1.25rem;
-    transition: 300ms ease-in-out;
-    z-index: 2;
-    box-shadow: 0px 0px 10px 5px hsl(0, 0%, 50%, 0.5);
-    border-radius: 6px;
-    margin-inline-end: 4px;
+    @media (width < calc(1000 / 16 * 1rem)) {
+      background-color: white;
+      width: 50%;
+      max-width: 350px;
+      position: absolute;
+      top: 80%;
+      right: -450px;
+      display: grid;
+      gap: 16px;
+      font-size: 1.25rem;
+      transition: 300ms ease-in-out;
+      z-index: 2;
+      box-shadow: 0px 0px 10px 5px hsl(0, 0%, 50%, 0.5);
+      border-radius: 6px;
+      margin-inline-end: 4px;
 
-    li {
-      border-bottom: 1px solid grey;
-      padding: 16px 18px;
+      li {
+        border-bottom: 1px solid grey;
+        padding: 16px 18px;
 
-      :hover {
-        cursor: pointer;
+        :hover {
+          cursor: pointer;
+        }
+
+        a {
+          color: black;
+        }
       }
 
-      a {
-        color: black;
+      &.active {
+        right: 0;
       }
     }
-  }
-
-  .off-screen-menu.active {
-    right: 0;
   }
 
   .topnav__overlay {
     opacity: 0;
     display: none;
 
-    @media (width < calc(600 / 16 * 1rem)) {
+    @media (width < calc(1000 / 16 * 1rem)) {
       position: fixed;
       top: 139px;
       left: 0;
@@ -320,6 +324,18 @@
 
     .topnav__homelink {
       padding: 8px;
+    }
+
+    .topnav__links {
+      @media (width >= calc(1000 / 16 * 1rem)) {
+        display: flex;
+        gap: 24px;
+      }
+    }
+
+    .topnav__link {
+      color: var(--color-topnav-links);
+      font-size: var(--font-size-topnav-links);
     }
 
     .topnav__right {

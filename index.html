@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mode UI</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/gh/rick-liruixin/body-scroll-lock-upgrade@v1.1.0/lib/index.umd.js"></script>
     <script src="./script.js" defer></script>
   </head>
   <body>
@@ -31,32 +32,35 @@
 
         <nav>
           <div class="topnav__overlay"></div>
-          <div class="topnav__right">
-            <a class="topnav__login-button button" href=""
-              >Login
-              <img
-                class="topnav__login-logo"
-                src="/assets/Images/icons/login.svg"
-                alt=""
-                width="17"
-                height="17"
-            /></a>
-
-            <div class="topnav__ham-menu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-
           <div class="off-screen-menu">
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Contact us</a></li>
+            <ul class="topnav__links">
+              <li><a href="#" class="topnav__link">Card access</a></li>
+              <li><a href="#" class="topnav__link">Banking</a></li>
+              <li><a href="#" class="topnav__link">Processing</a></li>
+              <li><a href="#" class="topnav__link">About</a></li>
+              <li><a href="#" class="topnav__link">Carrier</a></li>
+              <li><a href="#" class="topnav__link">Contact</a></li>
             </ul>
           </div>
         </nav>
+
+        <div class="topnav__right">
+          <a class="topnav__login-button button" href=""
+            >Login
+            <img
+              class="topnav__login-logo"
+              src="/assets/Images/icons/login.svg"
+              alt=""
+              width="17"
+              height="17"
+          /></a>
+
+          <div class="topnav__ham-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
       </div>
     </header>
 
